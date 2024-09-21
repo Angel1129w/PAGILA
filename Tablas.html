@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Datos</title>
+    <style>
+        body {
+            font-family: 'bernard MT condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        
+        function showTable(tableId) {
+            document.getElementById('alquileres-container').classList.add('hidden');
+            document.getElementById('actores-container').classList.add('hidden');
+            document.getElementById('clientes-container').classList.add('hidden');
+            document.getElementById(tableId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tablas de Datos</h1>
+
+        
+        <div class="button-container">
+            <button onclick="showTable('alquileres-container')">Mostrar Tabla de Alquileres</button>
+            <button onclick="showTable('actores-container')">Mostrar Tabla de Actores</button>
+            <button onclick="showTable('clientes-container')">Mostrar Tabla de Clientes</button>
+            <button onclick="window.location.href='graficosetl.html';">Volver a la Página Principal</button>
+        </div>
+
+        
+        <div id="alquileres-container" class="hidden">
+            <h2>Tabla de Alquileres</h2>
+            <iframe src="alquileres_tabla.html"></iframe>
+        </div>
+
+        
+        <div id="actores-container" class="hidden">
+            <h2>Tabla de Actores</h2>
+            <iframe src="actores_tabla.html"></iframe>
+        </div>
+
+    
+        <div id="clientes-container" class="hidden">
+            <h2>Tabla de Clientes</h2>
+            <iframe src="clientes_tabla.html"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>

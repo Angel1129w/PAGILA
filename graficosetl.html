@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGILA</title>
+    <link rel="icon" href='NN.jpg'>
+
+    <style>
+        body {
+            font-family: 'Bernard MT Condensed', serif, sans-serif;
+            margin: 10px;
+            padding: 100px;
+        }
+        .container {
+            padding: 100px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #graph-container, #additional-graphs-container {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 10px;
+        }
+        .hidden { display: none; }
+        .additional-plot {
+            margin-top: 200px;
+        }
+    </style>
+    <script>
+        function showAllGraphs() {
+            document.getElementById('additional-graphs-container').classList.remove('hidden');
+        }
+        function showTable() {
+            document.getElementById('table-container').classList.remove('hidden');
+        }
+        function showRecommendations() {
+            document.getElementById('recommendations-container').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>VISUALIZACION DE BASE DE DATOS 💻📊</h1>
+
+        <div class="button-container">
+            <button onclick="showAllGraphs()">Mostrar Todos los Gráficos</button>
+            <button onclick="window.location.href='Tablas.html';">Mostrar Tablas</button>
+            <button onclick="showRecommendations()">Mostrar Recomendaciones</button>
+        </div>
+
+        <div id="graph-container">
+            <h2>GRÁFICOS PRINCIPALES</h2>
+            <div id="graph1">
+                <iframe src="clientes_peliculas.html" style="display:block;"></iframe>
+            </div>
+            <div id="graph2">
+                <iframe src="actores_peliculas.html" style="display:block;"></iframe>
+            </div>
+            <div id="graph3">
+    <iframe src="alquileres.html" style="display:block;"></iframe>
+            </div>
+        </div>
+
+ <div id="additional-graphs-container" class="hidden">
+            <h2>Gráficos Adicionales</h2>
+            <div class="additional-plot">
+                <h3>Distribución de Películas por Cliente</h3>
+                <iframe src="clientes_peliculas_pie.html"></iframe>
+            </div>
+            <div class="additional-plot">
+                <h3>Distribución de Películas por Actor</h3>
+                <iframe src="actores_peliculas_pie.html"></iframe>
+            </div>
+        </div>
+
+        <div id="table-container" class="hidden">
+            <h2>Tabla de Alquileres</h2>
+            <iframe src="alquileres_tabla.html" style="width:100%; height:600px; border:none;"></iframe>
+        </div>
+
+        <div id="recommendations-container" class="hidden">
+            <h2>Recomendaciones de Películas</h2>
+            <iframe src="recomendaciones.html" style="width:100%; height:600px; border:none;"></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>

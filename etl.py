@@ -6,13 +6,13 @@ from sqlalchemy import create_engine
 import plotly.graph_objects as go
 import plotly.io as pio
 
-# Establecemos una semilla para garantizar la reproducibilidad de los resultados aleatorios
+# Establecemos una linea de codigo para garantizar la generacion  de los resultados aleatorios
 np.random.seed(0)
 
 # Función para conectarse a la base de datos PostgreSQL
 def connect_to_db():
     try:
-        # Crea la conexión a la base de datos usando el motor de sqlalchemy con las credenciales proporcionadas
+        # Crea la conexión a la base de datos usando el paquete de sqlalchemy de la libreria create engine utilizando credenciales proporcionadas
         engine = create_engine('postgresql+psycopg2://postgres:070223@localhost:5432/pagila')
         print("Conexión exitosa")
         return engine
